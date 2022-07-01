@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewData["Title"] = "Home Page";
+}
+@section Styles{
+<style>
+    h1 {
+        background-color: lightgray;
+    }
+
+    table {
+        border: 2px solid aqua;
+        text-align: center;
+        width: 40%
+    }
+</style>
+}
+
+@section Scripts{
+<script>
+    $("#buttonClick").click(function () {
+        var emp = {
+            "employees": [
+                { "name": "Tom", "workYears": 3, "salary": 35000 },
+                { "name": "Jack", "workYears": 5, "salary": 40000 },
+                { "name": "Mary", "workYears": 7, "salary": 45000 }
+            ]
+        };
+        let td = "";
+        let empp = emp.employees;
+        let arr = Object.keys(empp[0])
+        td = `<tr><td>${arr[0]}</td><td>${arr[1]}</td><td>${arr[2]}</td></tr>`
+        for (let i = 0, max = emp.employees.length; i < max; i++) {
+            td += `<tr><td>${emp[i].name}</td><td>${emp[i].workYears}</td><td>${emp[i].salary}</td></tr>`
+        }
+        $("td").append(td);
+    })
+</script>
+}

@@ -33,5 +33,10 @@ namespace Restful_Ajax.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        public IActionResult homework1()
+        {
+            return View();
+        }
     }
 }
